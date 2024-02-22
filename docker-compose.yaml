@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  resource:
+    build: .
+    ports:
+      - "8083:8083"
+    image: "resourcesss:v1"
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    container_name: mysqldbc
+    image: mysql:8
+    volumes:
+      - /home/mysql/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: resource
+      MYSQL_ROOT_PASSWORD: root
+
+
+
+
+
+
+
+
+
