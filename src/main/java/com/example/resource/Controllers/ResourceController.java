@@ -16,11 +16,18 @@ public class ResourceController {
     private  final ResourceService resourceService ;
 
     @GetMapping("/")
+    //test
     public ResponseEntity<List<Resource>> getAll() {
         List<Resource> resource = resourceService.findAllResource();
         return new ResponseEntity<>(resource, HttpStatus.OK);
     }
 
+    @GetMapping("/ress")
+    //test
+    public ResponseEntity<List<Resource>> getAllRessources() {
+        List<Resource> resource = resourceService.findAllResource();
+        return new ResponseEntity<>(resource, HttpStatus.OK);
+    }
     @PostMapping("/")
     public Resource add(@RequestBody Resource resource) {
 
